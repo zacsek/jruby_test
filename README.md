@@ -16,7 +16,8 @@ Advantages from our point of view:
 
 ## What you will need to run this
 
-Java & [Maven](https://maven.apache.org/)
+Java & [Maven](https://maven.apache.org/).
+
 Nothing else. OS doesn't matter.
 
 ## How to run the example project
@@ -29,6 +30,7 @@ mvn package
 Give it some time while it downloads half the internet to find the dependencies, but subsequent runs are much faster.
 
 After that the final JAR will be  `target/jruby-test-0.1-SNAPSHOT-shaded.jar`. This already includes the JRuby jar, the gems, our Ruby code, configuration files for gems (for example .irbrc can be put in, right now it's .pryrc).
+
 Run it with: `java -jar target/jruby-test-0.1-SNAPSHOT-shaded.jar`
 
 ## What's going on?
@@ -73,9 +75,9 @@ It adds the dependencies for Java and also the gems:
 	</dependencies>
 ```
 
-And finally it configures the plugins to produce the uber-Jar.
+And finally it configures the plugins to produce the Uber-Jar.
 
-On loading, it adds `GEM_HOME` and `GEM_PATH` to the Ruby script environment, both point to paths inside the JAR, and unpacks a tmp directory which it sets as `HOME` (This is because some gems want to write to HOME. ex. pry gem wants to write to ~/.pryrc)
+On loading, it adds `GEM_HOME` and `GEM_PATH` to the Ruby script environment, both point to paths inside the JAR, and unpacks a tmp directory which it sets as `HOME`. (This is because some gems want to write to `HOME`. For example: pry gem wants to write to `~/.pryrc`)
 
 # Hopefully:
 
