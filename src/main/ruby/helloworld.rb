@@ -1,7 +1,11 @@
-#require 'rubygems'
+puts "Home: #{ENV['HOME']}"
+puts "GemHome: #{ENV['GEM_HOME']}"
+puts "GemPath: #{ENV['GEM_PATH']}"
+
 require 'pry'
 binding.pry
 loaded = require 'awesome_print'
+ap ENV
 
 class HelloWorld
 	def self.run
@@ -11,12 +15,15 @@ class HelloWorld
 	attr_accessor :hash
 
 	def initialize
-		puts 'HelloWorld::initialize'
-		self.hash = { :hello => 'World', :nice => 2, :see => 'you' }
-		ap self.hash
-	rescue Exception => e
-		ap e
-		raise
+		begin
+			puts 'HelloWorld::initialize'
+			@hash = { :hello => 'World', :nice => 2, :see => 'you' }
+			puts @hash
+			ap @hash
+		rescue Exception => e
+			puts e
+			raise
+		end
 	end
 end
 

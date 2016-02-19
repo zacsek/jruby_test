@@ -16,6 +16,7 @@ import java.util.List;
 import java.util.Map;
 import org.jruby.embed.ScriptingContainer;
 import org.jruby.util.Dir;
+import org.jruby.exceptions.RaiseException;
 
 import static com.google.common.base.Throwables.propagate;
 import static java.lang.System.getenv;
@@ -37,7 +38,13 @@ public class JRubyRunner {
 
   public void run() {
     //ruby.runScriptlet("begin require 'helloworld'; HelloWorld.run; rescue Exception => e; puts e; raise; end;");
-	ruby.runScriptlet("r = require 'helloworld'; puts \"Loaded: #{r.to_s}\"");
+    try {
+		ruby.runScriptlet("r = require 'helloworld'; puts \"Loaded: #{r.to_s}\"");
+	}
+	catch(RaiseException e) {
+		System.out.println("Java: " + e.toString());
+		e.getException().printBacktrace(System.out);
+	}
   }
 
   public static void main(String... args) throws Exception {
