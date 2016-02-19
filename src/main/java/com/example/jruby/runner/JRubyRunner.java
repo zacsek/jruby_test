@@ -1,4 +1,4 @@
-package de.changepoint.jruby.runner;
+package com.example.jruby.runner;
 
 import com.beust.jcommander.JCommander;
 import com.beust.jcommander.Parameter;
@@ -22,7 +22,7 @@ import static com.google.common.base.Throwables.propagate;
 import static java.lang.System.getenv;
 import static org.jruby.CompatVersion.RUBY1_9;
 import static org.jruby.embed.AttributeName.BASE_DIR;
-import static de.changepoint.jruby.runner.JRubyRunnerOptions.buildOptions;
+import static com.example.jruby.runner.JRubyRunnerOptions.buildOptions;
 
 public class JRubyRunner {
   private final ScriptingContainer ruby;

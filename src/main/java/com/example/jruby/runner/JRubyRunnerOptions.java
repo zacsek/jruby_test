@@ -1,4 +1,4 @@
-package de.changepoint.jruby.runner;
+package com.example.jruby.runner;
 
 import com.beust.jcommander.JCommander;
 import com.beust.jcommander.Parameter;
