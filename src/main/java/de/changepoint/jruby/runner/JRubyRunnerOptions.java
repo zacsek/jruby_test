@@ -15,7 +15,7 @@ import static java.lang.System.getenv;
 
 public class JRubyRunnerOptions {
 	@Parameter(names = {"--with-system-gems", "-w"}, description = "Include System Gems.")
-		private Boolean withSystemGems = false;
+	private Boolean withSystemGems = false;
 
 	private Settings settings;
 

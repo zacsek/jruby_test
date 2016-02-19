@@ -37,14 +37,7 @@ public class JRubyRunner {
   }
 
   public void run() {
-    //ruby.runScriptlet("begin require 'helloworld'; HelloWorld.run; rescue Exception => e; puts e; raise; end;");
-    try {
-		ruby.runScriptlet("r = require 'helloworld'; puts \"Loaded: #{r.to_s}\"");
-	}
-	catch(RaiseException e) {
-		System.out.println("Java: " + e.toString());
-		e.getException().printBacktrace(System.out);
-	}
+	  ruby.runScriptlet("require 'helloworld'");
   }
 
   public static void main(String... args) throws Exception {

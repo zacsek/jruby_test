@@ -2,8 +2,6 @@ puts "Home: #{ENV['HOME']}"
 puts "GemHome: #{ENV['GEM_HOME']}"
 puts "GemPath: #{ENV['GEM_PATH']}"
 
-require 'pry'
-binding.pry
 loaded = require 'awesome_print'
 ap ENV
 

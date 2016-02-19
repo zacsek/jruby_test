@@ -54,11 +54,6 @@
 			<version>0.10.3</version>
 			<type>gem</type>
 		</dependency>
-		<!-- <dependency>
-			<groupId></groupId>
-			<artifactId></artifactId>
-			<version></version>
-		</dependency> -->
 	</dependencies>
 
 	<build>
